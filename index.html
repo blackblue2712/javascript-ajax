@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		var urlFetch = 'http://localhost:3000/todos';
+
+		// get data
+		var data = axios.get(urlFetch).then(function(response){
+			console.log(response);
+		})
+
+		/* ADD DATA */
+		// dataAdd = {id: 4, content: 'Sleep'};
+		axios.post(urlFetch, {id: 1, content: 'Pee'})
+			 .then(function(response){
+			 	console.log(response);
+		});
+		
+		/* DELETE */
+		// axios({
+		// 	method: 'DELETE',
+		// 	url: 'http://localhost:3000/todos/1',
+		// 	headers: { 'Content-Type': 'application/json' },
+		// });
+		
+		/* EDIT */
+		// axios.put('http://localhost:3000/todos/2', {id: 2, content: 'Wake up'})
+		// 	 .then(function(response){
+		// 	 	console.log(response);
+		// });
+
+	</script>
+</body>
+</html>
